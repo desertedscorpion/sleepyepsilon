@@ -1,5 +1,5 @@
 #!/bin/bash
 
-git -C "${@}" fetch origin master &&
-git -C "${@}" rebase origin/master &&
-git -C "${@}" push origin master
+pass git -C fetch origin master &&
+pass git -C rebase origin/master &&
+pass git -C push origin master

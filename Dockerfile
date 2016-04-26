@@ -2,7 +2,7 @@ FROM taf7lwappqystqp4u7wjsqkdc7dquw/heavytombstone
 MAINTAINER “Emory Merryman” emory.merryman+DoTDeCocXJroqaWu@gmail.com>
 ENV KEY_ID="2D2D81DA" PASS_REPO="git@github.com:AFnRFCb7/lanterngold.git"
 USER root
-RUN dnf update --assumeyes && dnf install --assumeyes bash-completion pass git cronie gnupg gnupg2 findutils openssh-clients sudo && dnf update --assumeyes && dnf clean all && echo "${LUSER} ALL=(ALL) NOPASSWD: ALL" > /etc/sudoers.d/${LUSER} && chmod 0444 /etc/sudoers.d/${LUSER}
+RUN dnf update --assumeyes && dnf install --assumeyes bash-completion pass git cronie gnupg gnupg2 findutils openssh-clients sudo a2ps && dnf update --assumeyes && dnf clean all && echo "${LUSER} ALL=(ALL) NOPASSWD: ALL" > /etc/sudoers.d/${LUSER} && chmod 0444 /etc/sudoers.d/${LUSER}
 COPY push_password_store.sh /usr/local/bin/push_password_store
 COPY paper_backup.sh /usr/local/bin/paper_backup
 COPY config /home/${LUSER}/.ssh/config
